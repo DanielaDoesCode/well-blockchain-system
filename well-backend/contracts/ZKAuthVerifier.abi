@@ -1,0 +1,301 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_verifier",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_sessionDuration",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "authenticate",
+    "inputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "pA",
+        "type": "uint256[2]",
+        "internalType": "uint256[2]"
+      },
+      {
+        "name": "pB",
+        "type": "uint256[2][2]",
+        "internalType": "uint256[2][2]"
+      },
+      {
+        "name": "pC",
+        "type": "uint256[2]",
+        "internalType": "uint256[2]"
+      },
+      {
+        "name": "nullifier",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "actionId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "sessionToken",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getSession",
+    "inputs": [
+      {
+        "name": "sessionToken",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "expiresAt",
+        "type": "uint48",
+        "internalType": "uint48"
+      },
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "revokeSession",
+    "inputs": [
+      {
+        "name": "sessionToken",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "revokeSessionByCommitter",
+    "inputs": [
+      {
+        "name": "sessionToken",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "committer",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "sessionDuration",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "sessions",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "expiresAt",
+        "type": "uint48",
+        "internalType": "uint48"
+      },
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "usedNullifiers",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "verifier",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract Groth16Verifier"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "verifySession",
+    "inputs": [
+      {
+        "name": "sessionToken",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "Authenticated",
+    "inputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "sessionToken",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "expiresAt",
+        "type": "uint48",
+        "indexed": false,
+        "internalType": "uint48"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SessionRevoked",
+    "inputs": [
+      {
+        "name": "sessionToken",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "user",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "InvalidProof",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidSession",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NullifierAlreadyUsed",
+    "inputs": [
+      {
+        "name": "nullifier",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "SessionExpired",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Unauthorized",
+    "inputs": []
+  }
+]

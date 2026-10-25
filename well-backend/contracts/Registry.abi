@@ -1,0 +1,557 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_userRegistry",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_historyFactory",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createRecord",
+    "inputs": [
+      {
+        "name": "uploader",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "metadata",
+        "type": "tuple",
+        "internalType": "struct Types.RecordMetadata",
+        "components": [
+          {
+            "name": "recordType",
+            "type": "uint8",
+            "internalType": "enum Types.RecordType"
+          },
+          {
+            "name": "createdAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "updatedAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "contentHash",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "storageReference",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract Record"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "emergencySummaryFactory",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract EmergencySummaryFactory"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "firstAdminRegistered",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getCommitmentByAddress",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getCommitmentByInternalID",
+    "inputs": [
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getEmergencySummaryByAddress",
+    "inputs": [
+      {
+        "name": "patientAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getHistoryContract",
+    "inputs": [
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getHistoryContractByAddress",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getIncidentManager",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getRiskAssessment",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getRole",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getRoleByAddress",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUser",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct WellRegistry.User",
+        "components": [
+          {
+            "name": "commitment",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "internalID",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "role",
+            "type": "uint8",
+            "internalType": "enum Types.Roles"
+          },
+          {
+            "name": "userAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "historyContract",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserByAddress",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct WellRegistry.User",
+        "components": [
+          {
+            "name": "commitment",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "internalID",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "role",
+            "type": "uint8",
+            "internalType": "enum Types.Roles"
+          },
+          {
+            "name": "userAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "historyContract",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "historyFactory",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract HistoryFactory"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "incidentManager",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isRegistered",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "register",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "role",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "historyContract",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "registerByAdmin",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "role",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "historyContract",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "revoke",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "riskAssessment",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setEmergencySummaryFactory",
+    "inputs": [
+      {
+        "name": "_emergencySummaryFactory",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setIncidentManager",
+    "inputs": [
+      {
+        "name": "_incidentManager",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setRiskAssessment",
+    "inputs": [
+      {
+        "name": "_riskAssessment",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "userRegistry",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract UserRegistry"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "error",
+    "name": "AdminAlreadyExists",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AlreadySet",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NoSelfRegistrationDoctor",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotRegistered",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Unauthorized",
+    "inputs": []
+  }
+]

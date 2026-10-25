@@ -1,0 +1,510 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_uploader",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_metadata",
+        "type": "tuple",
+        "internalType": "struct Types.RecordMetadata",
+        "components": [
+          {
+            "name": "recordType",
+            "type": "uint8",
+            "internalType": "enum Types.RecordType"
+          },
+          {
+            "name": "createdAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "updatedAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_contentHash",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "_storageReference",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "_policyVerifier",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "POLICY_PROOF_TTL",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "contentHash",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPolicy",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "deptCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "instCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getRecord",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct Types.RecordMetadata",
+        "components": [
+          {
+            "name": "recordType",
+            "type": "uint8",
+            "internalType": "enum Types.RecordType"
+          },
+          {
+            "name": "createdAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "updatedAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "_contentHash",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "_storageReference",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "_owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_uploader",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "grantAccess",
+    "inputs": [
+      {
+        "name": "doctor",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "grantAccessWithProof",
+    "inputs": [
+      {
+        "name": "pA",
+        "type": "uint256[2]",
+        "internalType": "uint256[2]"
+      },
+      {
+        "name": "pB",
+        "type": "uint256[2][2]",
+        "internalType": "uint256[2][2]"
+      },
+      {
+        "name": "pC",
+        "type": "uint256[2]",
+        "internalType": "uint256[2]"
+      },
+      {
+        "name": "deptCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "instCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "doctorCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "evaluatedAt",
+        "type": "uint48",
+        "internalType": "uint48"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "history",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isAuthorized",
+    "inputs": [
+      {
+        "name": "doctor",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "metadata",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "recordType",
+        "type": "uint8",
+        "internalType": "enum Types.RecordType"
+      },
+      {
+        "name": "createdAt",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "updatedAt",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "permissions",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract RecordPermissions"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "policyVerifier",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract PolicyVerifier"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "requiredDeptCommitment",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "requiredInstCommitment",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "revokeAccess",
+    "inputs": [
+      {
+        "name": "doctor",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setPolicy",
+    "inputs": [
+      {
+        "name": "_requiredDeptCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "_requiredInstCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "storageReference",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "updateIntegrityHash",
+    "inputs": [
+      {
+        "name": "newHash",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "uploader",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "verifyIntegrity",
+    "inputs": [
+      {
+        "name": "hash",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "AccessGranted",
+    "inputs": [
+      {
+        "name": "doctor",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "grantedBy",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "grantedAt",
+        "type": "uint48",
+        "indexed": false,
+        "internalType": "uint48"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "AccessRevoked",
+    "inputs": [
+      {
+        "name": "doctor",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "revokedAt",
+        "type": "uint48",
+        "indexed": false,
+        "internalType": "uint48"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "IntegrityHashUpdated",
+    "inputs": [
+      {
+        "name": "newHash",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PolicyUpdated",
+    "inputs": [
+      {
+        "name": "requiredDeptCommitment",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "requiredInstCommitment",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "InvalidProof",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "PolicyMismatch",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "StaleProof",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Unauthorized",
+    "inputs": []
+  }
+]

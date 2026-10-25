@@ -1,0 +1,432 @@
+[
+  {
+    "type": "function",
+    "name": "addressToCommitment",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "commitmentToUser",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "role",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      },
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "commitments",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getCommitmentByAddress",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getCommitmentByInternalID",
+    "inputs": [
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getRole",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getRoleByAddress",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUser",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct UserRegistry.User",
+        "components": [
+          {
+            "name": "commitment",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "internalID",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "role",
+            "type": "uint8",
+            "internalType": "enum Types.Roles"
+          },
+          {
+            "name": "userAddress",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserByAddress",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct UserRegistry.User",
+        "components": [
+          {
+            "name": "commitment",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "internalID",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "role",
+            "type": "uint8",
+            "internalType": "enum Types.Roles"
+          },
+          {
+            "name": "userAddress",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "internalIDToCommitment",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isDoctor",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isFirstResponder",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isHospital",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isRegistered",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "register",
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "role",
+        "type": "uint8",
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "revoke",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "Registered",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "role",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum Types.Roles"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Revoked",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "internalID",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "AddressAlreadyRegistered",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AlreadyRegistered",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InternalIDAlreadyUsed",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotRegistered",
+    "inputs": []
+  }
+]

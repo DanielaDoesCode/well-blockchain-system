@@ -1,0 +1,158 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_researchVerifier",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_registry",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_attestationManager",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "attestationManager",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract AttestationManager"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "contribute",
+    "inputs": [
+      {
+        "name": "pA",
+        "type": "uint256[2]",
+        "internalType": "uint256[2]"
+      },
+      {
+        "name": "pB",
+        "type": "uint256[2][2]",
+        "internalType": "uint256[2][2]"
+      },
+      {
+        "name": "pC",
+        "type": "uint256[2]",
+        "internalType": "uint256[2]"
+      },
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "nullifier",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "merkleRoot",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "registry",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract WellRegistry"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "researchVerifier",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IResearchVerifier"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "usedNullifiers",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "ContributionSubmitted",
+    "inputs": [
+      {
+        "name": "commitment",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "nullifier",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "CommitmentNotRegistered",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidProof",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NullifierAlreadyUsed",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "StaleOrInvalidRoot",
+    "inputs": []
+  }
+]

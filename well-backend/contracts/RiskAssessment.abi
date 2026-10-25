@@ -1,0 +1,187 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_incidentManager",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_userRegistry",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_emergencySummaryFactory",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "ACCESS_DURATION",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "emergencyGrant",
+    "inputs": [
+      {
+        "name": "emergencySummary",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "incidentId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "locationHash",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "patientCommitment",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "encryptedKey",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "emergencySummaryFactory",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract EmergencySummaryFactory"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getIncidentPatient",
+    "inputs": [
+      {
+        "name": "incidentId",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "incidentManager",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IncidentManager"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "userRegistry",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract UserRegistry"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "EmergencyGranted",
+    "inputs": [
+      {
+        "name": "responder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "incidentId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "expiresAt",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "IncidentNotActive",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidPatient",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "LocationMismatch",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotAssignedResponder",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotFirstResponder",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "PatientMismatch",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Unauthorized",
+    "inputs": []
+  }
+]
