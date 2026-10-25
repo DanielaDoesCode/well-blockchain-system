@@ -1,0 +1,12 @@
+# Pinned dependencies for the Locust result plots.
+#
+#   python3 -m venv .venv-plots
+#   ./.venv-plots/bin/pip install -r scripts/benchmarks/locust/requirements-plots.txt
+#   ./.venv-plots/bin/python scripts/benchmarks/locust/plot_locust_results.py <run-dir> ...
+#
+# These are deliberately separate from the .venv that runs Locust itself, so that
+# adding a plotting dependency can never perturb the load generator.
+#
+# Versions are the ones the committed figures were produced with.
+matplotlib==3.11.2
+numpy==2.5.3
